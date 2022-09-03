@@ -1,3 +1,7 @@
+// Get and render current day
+$("#currentDay").text(moment().format("dddd MMMM Do YYYY"));
+console.log("#currentDay");
+
 // Make a time block with different colours for the past, present, and future. Make a function that has an if statement.
 
 console.log("#currentDay");
