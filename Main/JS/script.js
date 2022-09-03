@@ -41,6 +41,7 @@ $(".saveBtn").on("click", function () {
   localStorage.setItem(time, plan);
 });
 
+// Created call-back functions
 timeColour();
 saveButton();
 
