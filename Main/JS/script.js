@@ -4,8 +4,6 @@ console.log("#currentDay");
 
 // Make a time block with different colours for the past, present, and future. Make a function that has an if statement.
 
-console.log("#currentDay");
-
 function timeColour() {
   var hour = moment().hours();
 
@@ -20,6 +18,18 @@ function timeColour() {
       $(this).addClass("present");
     } else {
       $(this).addClass("past");
+    }
+  });
+}
+
+// the events are all cleared after the page is refreshed.
+function refreshTimeBlocks() {
+  $(".hour").each(function () {
+    var currentHour = $(this).text();
+    var currentBlock = localStorage.getItem(currentBlock);
+
+    if (currentBlock !== null) {
+      $(this).siblings(".content").val(currentBlock);
     }
   });
 }
