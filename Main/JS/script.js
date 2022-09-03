@@ -22,7 +22,7 @@ function timeColour() {
   });
 }
 
-// the events are all cleared after the page is refreshed.
+// The events are all cleared after the page is refreshed.
 function refreshTimeBlocks() {
   $(".hour").each(function () {
     var currentHour = $(this).text();
@@ -33,6 +33,13 @@ function refreshTimeBlocks() {
     }
   });
 }
+
+// When clicking the save button, the data is stored to local storage.
+$(".saveBtn").on("click", function () {
+  var time = $(this).siblings(".hour").text();
+  var plan = $(this).siblings(".description").val();
+  localStorage.setItem(time, plan);
+});
 
 
 
