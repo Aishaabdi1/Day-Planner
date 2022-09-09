@@ -1,4 +1,4 @@
-const timeBlockArray = [
+const arrayOfTimeBlocks = [
     {
       label: "9",
       key: 9,
@@ -38,7 +38,7 @@ const timeBlockArray = [
   ];
   
   // local storage
-  const getFromLocalStorage = function (key, defaultValue) {
+  const retrieveFromLocalStorage = function (key, defaultValue) {
     const localStorageData = JSON.parse(localStorage.getItem(key));
   
     if (!localStorageData) {
@@ -48,19 +48,19 @@ const timeBlockArray = [
     }
   };
   
-  // storing the value the user keys into the textarea against the hour in the LS
-  const storeInput = function (event) {
+  // Storing the value entered by the user in the text area against the hour in the LS
+  const saveInput = function (event) {
     if ($(event.target).is(":button")) {
       const button = event.target;
       const hour = $(button).data("time");
       const appointment = $(button).prev().val();
-      const savedInput = getFromLocalStorage("appointments", {});
+      const savedInput = retrieveFromLocalStorage("appointments", {});
       savedInput[hour] = appointment;
       localStorage.setItem("appointments", JSON.stringify(savedInput));
     }
   };
   
-  // colour coding current past and present hour using moment JS
+  // Used moment js to color code the current, past and present hours
   const colourCodingHours = function (hour) {
     const currentTime = moment().hour();
     if (currentTime > hour) {
@@ -72,21 +72,21 @@ const timeBlockArray = [
     }
   };
   
-  // initializing LS
+  // Initalizing local storage
   const initialLocalStorage = function () {
-    const dataFromLS = getFromLocalStorage("appointments", {});
+    const dataFromLS = retrieveFromLocalStorage("appointments", {});
   
     if (!dataFromLS) {
       localStorage.setItem("appointments", JSON.stringify({}));
     }
   };
   
-  // sets current day and time on header
+  // Function sets current day and time on header
   const currentDayTime = $("#currentDay");
   
-  // create each hour slots on a loop for every object to sit in its key pair
+  // Create an hourly loop for each object to sit in its key pair.
   const constructCurrentHour = function () {
-    const savedAppointments = getFromLocalStorage("appointments", {});
+    const savedAppointments = retrieveFromLocalStorage("appointments", {});
     const callback = function (element) {
       const hour = element.key;
       const label = element.label;
@@ -99,11 +99,11 @@ const timeBlockArray = [
             </div>`;
       $(".container").append(hourSchedule);
     };
-    $(".container").click(storeInput);
-    return timeBlockArray.map(callback);
+    $(".container").click(saveInput);
+    return arrayOfTimeBlocks.map(callback);
   };
   
-  // first function to run
+  // Created a function to run
   const onReady = function () {
     const timerTick = function () {
       const dateTime = moment();

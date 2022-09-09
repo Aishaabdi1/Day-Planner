@@ -59,12 +59,12 @@
   }
   
   .future {
-    background-color: greenyellow;
+    background-color: peru;
   }
   
   /* save button */
   .save {
-    background-color:blue;
+    background-color:whitesmoke;
     border-radius: 0 25px 25px 0;
     border-color: white;
     font-family: "serif";
@@ -96,7 +96,7 @@
   /* hour slots  */
   .time {
     font-family: "serif", cursive;
-    background-color:blue;
+    background-color:whitesmoke;
     border-radius: 25px 0 0 25px;
     text-align: center;
     padding-top: 1.2rem;
