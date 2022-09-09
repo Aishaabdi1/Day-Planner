@@ -36,7 +36,7 @@
   /* header styling */
   .jumbotron {
     text-align: center;
-    background-color: var(--lilac);
+    background-color: white;
     color: black;
     border-radius: 0;
     border-bottom: 2px solid var(--grey);
@@ -55,19 +55,19 @@
   }
   
   .present {
-    background-color: var(--lilac);
+    background-color: violet;
   }
   
   .future {
-    background-color: var(--pink);
+    background-color: greenyellow;
   }
   
   /* save button */
   .save {
-    background-color: var(--lavender);
+    background-color:blue;
     border-radius: 0 25px 25px 0;
     border-color: white;
-    font-family: "Abril Fatface", cursive;
+    font-family: "serif";
     flex: 1;
     text-align: center;
   }
@@ -95,8 +95,8 @@
   
   /* hour slots  */
   .time {
-    font-family: "Abril Fatface", cursive;
-    background-color: var(--lavender);
+    font-family: "serif", cursive;
+    background-color:blue;
     border-radius: 25px 0 0 25px;
     text-align: center;
     padding-top: 1.2rem;
