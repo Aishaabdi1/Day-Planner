@@ -1,3 +1,4 @@
+// Created an array of time blocks
 const arrayOfTimeBlocks = [
     {
       label: "9",
